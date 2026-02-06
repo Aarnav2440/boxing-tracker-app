@@ -1,0 +1,80 @@
+<!--
+Author: Aarnav Lakhanpal
+Description: 
+Login and registration HTML template for the Boxing Class Tracker application.
+This view allows existing users to log in and new users to register.
+User credentials are validated through AngularJS and submitted to the Node.js
+backend for authentication and database storage.
+-->
+
+<!-- Toggle buttons allowing users to switch between login and registration forms -->
+<section id="auth-section">
+    <nav id="auth-toggle-options">
+        <div class = "form-buttons">
+        <button class ="auth-button" type="button" ng-click="showLogin = 'login'">Existing Member</button>
+        <button class ="auth-button"  type="button" ng-click="showLogin = 'register'">New Fighter</button>
+        </div>
+    </nav>
+
+    <hr>
+<!-- Login form displayed when the login option is selected -->
+    <form class="form-container" ng-show="showLogin === 'login'" ng-submit="login()">
+        <h2>Member Login</h2>
+        <!-- Displays an error message if login validation fails -->
+        <div id = "login-error" ng-if="errorMessage">{{ errorMessage }}</div>
+
+
+        <div class ="form-sections">
+        <label for="login-username">Username:</label>
+        <input type="text" id="login-username" ng-model="loginUser.username">
+        </div>
+
+        <div class ="form-sections">
+        <label for="login-password">Password:</label>
+        <input type="password" id="login-password" ng-model="loginUser.password">
+        </div>
+
+        <div class = "form-buttons">
+        <button type="submit">Sign In</button>
+        </div>
+    </form>
+
+   <!-- Registration form displayed when the register option is selected -->
+
+    <form class="form-container" ng-show="showLogin === 'register'" ng-submit="register()">
+        <h2>Register New Member</h2>
+        <div class ="form-sections">
+        <label for="registerFirstName">First Name:</label>
+        <input type="text" id="registerFirstName" ng-model="newUser.firstName">
+        </div>
+
+        <div class ="form-sections">
+        <label for="registerLastName">Last Name:</label>
+        <input type="text" id="registerLastName" ng-model="newUser.lastName">
+        </div>
+
+        <div class ="form-sections">
+        <label for="registerUsername">Username:</label>
+        <input type="text" id="registerUsername" ng-model="newUser.username">
+        </div>
+
+        <div class ="form-sections">
+        <label for="registerPassword">Password:</label>
+        <input type="password" id="registerPassword" ng-model="newUser.password">
+        </div>
+
+        <div class ="form-sections">
+        <label for="registerEmail">Email Address:</label>
+        <input type="email" id="registerEmail" ng-model="newUser.email">
+        </div>
+
+        <div class ="form-sections">
+        <label for="registerPhone">Phone Number:</label>
+        <input type="text" id="registerPhone" ng-model="newUser.phone">
+        </div>
+
+        <div class = "form-buttons">
+        <button type="submit">Register Account</button>
+        </div>
+    </form>
+</section>

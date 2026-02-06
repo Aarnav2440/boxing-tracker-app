@@ -1,0 +1,51 @@
+<!--
+Author: Aarnav Lakhanpal
+Description:
+Single-page application (SPA) for the Boxing Class Tracker using the AngularJS framework.
+This file serves as the main shell (index.html) and dynamically injects routed HTML templates
+based on user interaction and routing. It uses ng-view to inject templates and ngRoute to
+manage client-side routing.
+-->
+
+<!DOCTYPE html>
+<html lang = "en">
+<head>
+    <!--CSS-->
+    <!-- Linking external CSS style sheet for styling logic and JavaScript file to handle logic-->
+    <link rel="stylesheet" href="./css/style.css">
+
+    <!-- AngularJS library/ Bootstrap angular -->
+    <script src = "https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <!-- AngularJS Route library for single-page application routing -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular-route.min.js"></script>
+
+    <!-- Linking external JavaScript file for AngularJS application logic -->
+    <script src="js/app.js" ></script>
+
+    <meta charset="UTF-8" >
+    <title>Boxing Class Tracker Home page</title>
+</head>
+
+
+<body ng-app="boxingApp" ng-controller="MainController">
+    <a href = "#" ><h1> Boxing Class Tracker </h1></a>
+    <h1><p>Our Motto is Consistency, Hard Work and resilience</p></h1>
+    <!-- Adding a vertical navigation bar with hyperlinks
+        to allow navigation between all Boxing tracker pages -->
+
+    <nav id = "navigation-bar">
+        <ul>
+            <li><a class="navigation-link" href="#!/">Home</a></li>
+            <li><a class="navigation-link" href="#!/schedule">Schedule</a></li>
+            <li><a class="navigation-link" href="#!/login">Login / Register</a></li>
+
+            <li><a class="navigation-link" href="" ng-click="checkProfileAccess()">My Profile</a></li>
+            <li><button id="logout-button" ng-disabled="!isLoggedIn()" ng-click="logout()">Logout</button></li>
+        </ul>
+    </nav>
+    <div ng-view >
+        <!-- The ng-view directive is where the routed content will be displayed -->
+    </div>
+
+</body>
+</html>

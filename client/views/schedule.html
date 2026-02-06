@@ -1,0 +1,21 @@
+<!-- Author: Aarnav Lakhanpal
+Description:
+his page is part of the public facing feature of the Boxing Class Tracker application.
+It allows users who are not registered or logged in to view the weekly class schedule
+offered by the gym, helping them understand available classes before registering.
+Logically, this page uses AngularJS data binding to display class information stored
+as an array and rendered dynamically within this HTML template.
+
+
+-->
+
+<h2>Class Schedule</h2>
+<table id = "schedule-table">
+    <!-- using ng-repeat directive here to loop through the classes array and display each class's details -->
+    <tr ng-repeat="class in classes">
+        <td>{{ class.day }}</td>
+        <td>{{ class.time }}</td>
+        <td>{{ class.type }}</td>
+        <td>{{ class.level }}</td>
+    </tr>
+</table>

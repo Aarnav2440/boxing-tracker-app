@@ -1,0 +1,76 @@
+/* Author: Aarnav Lakhanpal
+Description: Main style sheet for Boxing Class Tracker.
+Handles layout, navigation bar, forms, tables, and profile presentation.
+*/
+
+body{
+    background-color: black ;/* Light background for better readability */
+    color: ivory; /* Dark text for contrast */
+    margin: 0;
+    padding: 0; 
+}
+
+/* Combined Navigation and Auth Toggle logic */
+#navigation-bar ul, #auth-toggle-options {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    padding: 0; /* Ensures true centering */
+}
+
+#navigation-bar li, .auth-button {
+    margin: 20px;
+    font-size: 20px;
+}
+
+h1, h2 {
+    text-align: center;
+    font-size: 40px; 
+    color: gold
+}
+
+/* Fix: Width changed from 50px to 80% for readability */
+#schedule-table {
+    font-family: Arial, sans-serif;
+    border-collapse: collapse;
+    width: 80%; 
+    max-width: 800px;
+    margin: 20px auto; 
+    border: 2px solid black;
+    background-color: white; /* White table for contrast */
+    color: black;
+}
+
+table, th, td {
+    border: 1px solid;
+    padding: 10px; /* Added for cleaner look */
+    text-align: center;
+}
+
+/* Fix: Auth Section container using centering logic */
+#auth-section, #profile-info {
+    width: 500px;
+    min-height: 300px;
+    margin: 40px auto; 
+    border: 10px solid forestgreen;
+    text-align: center;
+    padding: 20px;
+}
+
+/* Submit button styling*/
+button[type="submit"] {
+    width: 80%;
+    height: 40px;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+#login-error {
+    color: red;
+    margin-bottom: 15px;
+    font-weight: bold;
+}
+#profile-details, #profile-details p {
+    font-size: 20px;
+    margin: 10px 0;
+}

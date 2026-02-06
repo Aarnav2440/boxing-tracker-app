@@ -1,0 +1,23 @@
+<!-- Author: Aarnav Lakhanpal
+Description: 
+User profile view displaying authenticated user information retrieved from the database.
+This page shows personal details such as username, email, phone number, and account status.
+-->
+
+
+<div id="profile-info">
+    
+    <h2>Welcome, {{profile.firstName}} {{profile.lastName}}!</h2>
+    <hr>
+    <div id="profile-details">
+    <p><strong>Username:</strong> {{profile.username}}</p>
+    <p><strong>Email:</strong> {{profile.email}}</p>
+    <p><strong>Phone:</strong> {{profile.phone}}</p>
+    <p><strong>Status:</strong> {{profile.status}}</p>
+
+    <!-- logout button keeping track of users logged in status in the current session -->
+    <button ng-click="logout()" class="btn-logout">Logout</button>
+    </div>
+    
+    
+</div>
